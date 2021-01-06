@@ -1,0 +1,22 @@
+fill in the blanks to get the correct word before the man hangs him
+self.
+
+prompt a secret word (with appropriate blanks):
+    select a random secret word from a list
+
+user enters a letter
+iterate through the secret word
+check weather the letter is in the secret word
+if in secret word:
+    get the corresponding index and fill the corresponding blank
+else:
+    update the hangman fig
+
+---------------------------------------------------------------------------
+MAJOR BUGS
+    program should fill all the blanks with the same letters
+    program replaces the first letter when there are several same letters
+    when a wrong letter is entered, program does not print the blanks
+    prompt user if he inputs a letter which was inserted earlier
+---------------------------------------------------------------------------
+All the major bugs are fixed
