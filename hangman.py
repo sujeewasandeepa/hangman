@@ -82,6 +82,9 @@ def play_again():
         play_game()
 
 
+guessed_letters = []
+
+
 def play_game():
     secret_word = random.choice(words).lower()
     spaces = ["_" for x in range(len(secret_word))]
@@ -104,11 +107,17 @@ def play_game():
             print("That letter is already inserted")
             letter = input("enter a letter: ")
 
+        # checking if the user enters the same letter again
+        while letter in guessed_letters:
+            print("you have already guessed that letter")
+            letter = input("enter a letter: ")
+
         if letter_in_word(secret_word, letter, spaces):
             print(diagrams[guess_count])
             print(' '.join(spaces))
         else:
             guess_count += 1
+            guessed_letters.append(letter)
             if guess_count == 6:
                 print(diagrams[guess_count])
                 print("OH NOO!!..You ran out of guesses")
