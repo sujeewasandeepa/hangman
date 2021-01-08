@@ -101,7 +101,7 @@ def play_game():
             print("YEPEEE!!!!..You guessed the correct word")
             play_again()
 
-        letter = input("enter a letter: ")
+        letter = input("enter a letter: ")[0]
         # error checking
         while not (letter.isalpha() or letter.islower()):
             letter = input("enter a letter: ")
