@@ -74,11 +74,14 @@ def letter_in_word(word, input_, list_):
 def play_again():
     response = input("do you wanna play again?")
     while not response.isalpha():
-        response = input("do you wanna play again?")
+        response = input("do you wanna play again?").lower()
 
-    if response.lower() == 'n':
+    while not (response == 'n' or response == 'y'):
+        response = input("do you wanna play again?").lower()
+
+    if response == 'n':
         exit(0)
-    elif response.lower() == 'y':
+    elif response == 'y':
         play_game()
 
 
